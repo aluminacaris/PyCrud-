@@ -10,11 +10,11 @@ def conn():
         pwd = os.getenv("DB_PASSWORD") 
         connect = pg.connect (
 
-            user = "postgres",
-            password = pwd,
-            host = "172.0.0.1",
-            port = 5432,
-            database = "biblioteca" ) 
+            user="postgres",
+            password=pwd,
+            host="127.0.0.1",
+            port="5432",
+            database="biblioteca" ) 
 
         print("conectado com sucesso")
 
