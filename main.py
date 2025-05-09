@@ -23,6 +23,13 @@ def main():
         return acao
 
     # UPDATE
+    def atualiza(ID_obra, titulo_novo):
+        cmd_update = f"UPDATE obras SET titulo={titulo_novo} WHERE ID_obra='{ID_obra}"
+        cursor.execute(cmd_update)
+        connection.commit
+        print("titulo atualizado com sucesso")
+        # dps tem q ver pra mudar as outras opções tb mas isso vc tem q se virar ok
+
     encerra_conn(connection)
 
 
