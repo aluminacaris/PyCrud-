@@ -38,9 +38,19 @@ def main():
         print("obra deletada com sucesso")
 
 
-    # insert_obra("eu robo", "10/04/1984", 3, 450, "português", "isaque neto")
+    titulo = input("Qual o titulo da obra? \n")
 
+    data_publicacao = input("Qual a data de publicação dela? xx/xx/xxxx \n")
 
+    edicao = int(input("Qual a edição dela? \n"))
+
+    lingua = input("Qual a linguagem da obra? \n")
+    
+    numero_paginas = int(input("Quantas paginas tem? \n"))
+
+    autor = input("quem é o autor? \n")
+
+    insert_obra(titulo, data_publicacao, edicao, numero_paginas, lingua, autor)
 
     # atualiza('Isaac Asimov', 2)
 
