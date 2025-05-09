@@ -1,1 +1,3 @@
-vo tentar fazer um crud em python com fastapi
+vo tentar fazer um crud em python 
+
+consegui
