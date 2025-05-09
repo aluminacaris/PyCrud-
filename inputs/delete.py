@@ -10,5 +10,5 @@ def deleta(ID_obra):
     print("obra deletada com sucesso")
 
 def delete():
-    id = int(input("Qual o id a ser deletado?"))
+    id = int(input("Qual o id a ser deletado?\n"))
     return deleta(id)

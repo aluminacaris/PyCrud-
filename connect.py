@@ -16,7 +16,7 @@ def conn():
             port="5432",
             database="biblioteca" ) 
 
-        # print("conectado com sucesso")
+        print("conectado com sucesso")
 
         return connect
 
