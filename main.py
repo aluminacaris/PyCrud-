@@ -9,6 +9,23 @@ def main():
     connection = conn()
     cursor = connection.cursor()
 
+    opcoes_principais = {
+        1: insert,
+        2: seleciona,
+        3: "menu updates",
+        4: delete,
+        5: "sair"
+    }
+
+    opcoes_update = {
+        1: title_inp,
+        2: anopubli_inp,
+        3: edicao_inp,
+        4: npag_inp,
+        5: lingua_inp,
+        6: autor_inp
+    }
+
     print("\n")
     print("Seja bem vindo ao sistema da biblioteca!")
     print("ainda não está completo :(")
@@ -22,47 +39,38 @@ def main():
             "4 - deletar uma obra\n" \
             "5 - sair\n"))
 
-            if opt == 1:
-                insert()
-
-            elif opt == 2:
-                seleciona()
-
-            elif opt == 3:
-                while True:
-                    update = int(input("o que gostaria de atualizar?\n" \
-                    "1 - titulo\n" \
-                    "2 - ano de publicação\n" \
-                    "3 - edição\n" \
-                    "4 - número de páginas\n" \
-                    "5 - língua\n" \
-                    "6 - autor\n"))
-                    
-                    if update == 1:
-                        title_inp()
-                    elif update == 2:
-                        anopubli_inp()
-                    elif update == 3:
-                        edicao_inp()
-                    elif update == 4:
-                        npag_inp()
-                    elif update == 5:
-                        lingua_inp()
-                    elif update == 6:
-                        autor_inp()
-                    else:
-                        print("insira um valor válido!")
-                        continue
-
-            elif opt == 4:
-                delete()
-
-            elif opt == 5:
-                break;
-        
-            else:
-                print("coloca um numero certo ai boboca")
+            if opt not in opcoes_principais:
+                print("Opção inválida! Tente novamente.")
                 continue
+
+            acao = opcoes_principais[opt]
+
+            if acao == "sair":
+                break
+            elif acao == "menu updates":
+                    while True:
+                        try:
+                            update_opt = int(input("o que gostaria de atualizar?\n" \
+                            "1 - titulo\n" \
+                            "2 - ano de publicação\n" \
+                            "3 - edição\n" \
+                            "4 - número de páginas\n" \
+                            "5 - língua\n" \
+                            "6 - autor\n"
+                            "7 - Voltar\n"))
+                            
+                            if update_opt == 7:
+                                break
+                            elif update_opt in opcoes_update:
+                                opcoes_update[update_opt]()  
+                            else:
+                                print("Opção inválida!")
+                                continue
+
+                        except ValueError:
+                            print("Digite um número válido!")
+            else:
+                acao()
            
         except ValueError: 
             print("coloca numero direito bocó")
